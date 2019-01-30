@@ -1,0 +1,55 @@
+/**index.wxss**/
+.item {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  width: 100%;
+}
+
+
+/* 按钮loading */
+.spin-loading {
+  position: relative;
+  height: 30px;
+}
+
+.spin-loading::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  /* center */
+
+  width: 4px;
+  height: 4px;
+  content: '';
+  color: #ccc;
+  border-radius: 100%;
+
+  animation: spinZoom 1s steps(200) infinite;
+  box-shadow:
+    0 -10px currentColor,
+    10px 0 currentColor,
+    0 10px currentColor,
+    -10px 0 currentColor,
+    -7px -7px currentColor,
+    7px -7px currentColor,
+    7px 7px currentColor,
+    -7px 7px currentColor;
+}
+
+/* loading动画 */
+
+@keyframes spinZoom {
+  0% {
+    transform: scale(.75) rotate(0);
+  }
+
+  100% {
+    transform: scale(.75) rotate(360deg);
+  }
+}
+

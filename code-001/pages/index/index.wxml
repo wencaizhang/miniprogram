@@ -1,0 +1,7 @@
+<!--index.wxml-->
+<view class="container">
+  <view wx:for="{{ list }}" wx:key="{{ item.id }}" class="item">
+    {{ item.id }}：{{ item.text }}
+  </view>
+  <text wx:if="loading" class='spin-loading'></text>
+</view>
