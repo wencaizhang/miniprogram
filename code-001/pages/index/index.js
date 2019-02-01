@@ -16,13 +16,15 @@ Page({
 
   onPullDownRefresh() {
     this.setData({
-      currPage: 0
+      currPage: 0,
+      list: [],
     })
     
     this.fetchListData();
   },
   
   onReachBottom () {
+    console.log('onReachBottom')
     this.setData({
       currPage: this.data.currPage
     })
@@ -36,7 +38,6 @@ Page({
 
     // 用定时器模拟数据请求
     setTimeout(() => {
-
       const data = []
       for (let i = 0; i < pageSize; i++) {
         let count = pageSize * currPage + i ;
@@ -52,6 +53,6 @@ Page({
 
       wx.stopPullDownRefresh();
 
-    }, 1000)
+    }, 3000)
   }
 });
